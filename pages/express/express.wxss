@@ -1,0 +1,91 @@
+page{
+   background: #CDCDCD ;
+}
+/* 头部 */
+.todo-header{
+  height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 40px;
+  line-height: 80rpx;
+}
+/* 搜索样式 */
+.search-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  height: 60rpx;
+  margin: 15rpx 50rpx;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid white;
+}
+.search-wrapper image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right:16rpx; 
+}
+.search-wrapper input{
+  flex: 1;
+}
+.placeClass{
+  color: #eee;
+  font-size: 36rpx;
+}
+/* tab切换 */
+.tab-nav{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.tab-nav view{
+  float: left;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #ccc;
+  width: 33.33%;
+  font-size: 30rpx;
+  text-align: center;
+  color: #fff;
+}
+.tab-nav view.on{
+  background: #01b2fe;
+  color: #fff;
+  border-radius: 10rpx;
+}
+.rodo-list-title{
+   padding:10rpx;
+   font-size: 36rpx;
+   color:#fff;
+}
+/* 复选框样式 */
+.checkbox{
+  padding:10rpx;
+}
+.checkboxlist{
+     padding:10rpx;
+}
+.checkbox-item{
+  display: flex;
+  justify-content: space-between;
+  font-size: 36rpx;
+  line-height: 60rpx;
+  color:#000;
+  margin-bottom: 10rpx;
+  background: #fff;
+  padding:0 10rpx;
+}
+.checkbox-item .close{
+  font-size:48rpx;
+}
+.checkboxover{
+  background: #E6E6E6;
+  opacity: 0.6;
+}
+.desc{
+  font-size: 24rpx;
+  color:#666;
+  padding: 0 14rpx
+}
