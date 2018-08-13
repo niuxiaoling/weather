@@ -1,0 +1,46 @@
+<!-- index.wxml -->
+<view class="weather-container"> 
+  <view class="search-city">
+    <view class="search-wrapper">
+      <image src='/img/search.png'></image>
+      <input placeholder='查询其他城市天气' confirm-type='search' maxlength='20' placeholder-class='placeClass' bindconfirm='commitSearch' value='{{searchText}}' ></input>
+    </view>
+  </view>
+  <view class="weather-content">
+    <view class='info'>
+      <view class='city'>
+        <view>{{cityDatas.originalData.results[0].currentCity || '定位中'}}</view>
+        <text class='time' wx:if='{{cityDatas.updateTimeFormat}}'>{{cityDatas.updateTimeFormat}} 更新</text>
+      </view>
+      <view wx:if='{{cityDatas.temperature}}' class='temp num' decode='true'>{{cityDatas.temperature}}<text style='font-size:90rpx'>°</text></view>
+      <view class='weather'>{{cityDatas.originalData.results[0].weather_data[0].weather || '--'}}</view>
+      <view class='pm' wx:if='{{cityDatas.pm.value}}'>
+        <text>{{cityDatas.pm.desc}} {{cityDatas.pm.value}}</text>
+      </view>
+    </view>
+    <view class="guide" wx:if='{{cityDatas.originalData.results[0].weather_data}}'>
+      <view class="item" wx:for='{{cityDatas.originalData.results[0].weather_data}}' wx:key="{{index}}">
+        <view class='date i'>{{index === 0 ? "今天":item.date}}</view>
+        <view class='temperature i'>{{item.temperature}}</view>
+        <view class='weather i'>{{item.weather}}</view>
+        <view class='wind i'>{{item.wind}}</view>
+      </view>
+    </view>
+    <view class='livingIndex' wx:if='{{cityDatas.originalData.results[0].index && !setting.hiddenIndex}}'>
+      <view class='item' wx:for='{{cityDatas.originalData.results[0].index}}' wx:key='{{index}}'>
+        <image class='icon' src='{{icons[index]}}'></image>
+        <view class='right'>
+          <view class='key'>{{item.tipt}} {{item.zs}}</view>
+          <view class='value'>{{item.des}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='message'>
+      <view>数据来源 百度开发地图 htb</view>
+  </view>
+  <!-- 悬浮菜单 -->
+  <view class="menus">
+    <image src='/img/menu.png' bindtap='searchCity' class='menu main'></image>
+  </view>
+</view>
