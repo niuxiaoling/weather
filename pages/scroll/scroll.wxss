@@ -1,0 +1,13 @@
+/* pages/seamlessscrolling/seamlessscrolling.wxss */
+/*无缝滚动  */
+.seamlessscrolling{
+  background-color: #EFEFF4;
+  position: relative;
+  overflow: hidden;
+}
+.seamlessscrolling view{
+  position: absolute;
+  white-space: nowrap;
+  color: #71D1DA;
+}
+/*无缝滚动  *//* pages/scroll/scroll.wxss */

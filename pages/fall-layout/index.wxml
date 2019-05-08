@@ -1,0 +1,19 @@
+<!--pages/fall-layout/index.wxml-->
+<!-- 瀑布流布局和无限加载,实现原理:我们要实现的是一个固定2列的布局，然后将图片数据动态加载进这两列中（而加载进来的图片，会根据图片实际的尺寸，来决定到底是放在左列还是右列中）我们可以根据左右两列目前累积的内容高度，来决定把当前加载进来的图片放到哪一边。 -->
+<view style="display:none">
+  <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.pic}}" bindload="onImageLoad"></image>
+</view>
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+  <view style="width:100%">
+    <view class="img_item">
+      <view wx:for="{{col1}}" wx:key="id">
+        <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image>
+      </view>
+    </view>
+    <view class="img_item">
+      <view wx:for="{{col2}}" wx:key="id">
+        <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>

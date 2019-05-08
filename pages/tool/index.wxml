@@ -1,0 +1,45 @@
+<!--pages/tool/index.wxml-->
+<view class='container'>
+  <view >
+    <navigator class="arrow-item" hover-class='none' url="../anchor/anchor">
+      <view class='arrow-title'>锚点定位及跳转</view>
+      <image src='../../img/arrow.png'></image>
+    </navigator>
+  </view>
+  <view class='box-item'>
+    <navigator class="arrow-item" hover-class='none' url="../fall-layout/index">
+      <view class='arrow-title'>瀑布布局及无线加载</view>
+      <image src='../../img/arrow.png'></image>
+    </navigator>
+  </view>
+  <view class='box-item'>
+    <navigator class="arrow-item" hover-class='none' url="../fall-layout1/index">
+      <view class='arrow-title'>瀑布流布局</view>
+      <image src='../../img/arrow.png'></image>
+    </navigator>
+  </view>
+  <view class='box-item'>
+     <navigator class="arrow-item" hover-class='none' url="../leftdelete/leftdelete">
+      <view class='arrow-title'>左滑删除</view>
+      <image src='../../img/arrow.png'></image>
+    </navigator>
+  </view>
+  <view class='box-item'> 
+  <navigator class="arrow-item" hover-class='none' url="../scroll/scroll">
+      <view class='arrow-title'>无缝滚动</view>
+      <image src='../../img/arrow.png'></image>
+    </navigator>
+  </view>
+  <view class='box-item'>
+    <navigator class="arrow-item" hover-class='none' url="../tabs/tabs">
+      <view class='arrow-title'>顶部tab切换效果</view>
+      <image src='../../img/arrow.png'></image>
+    </navigator>
+  </view>
+  <view class='box-item'>
+    <navigator class="arrow-item" hover-class='none' url="../totop/totop">
+      <view class='arrow-title'>吸顶效果</view>
+      <image src='../../img/arrow.png'></image>
+    </navigator>
+  </view>
+</view>

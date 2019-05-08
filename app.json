@@ -1,32 +1,48 @@
 {
   "pages":[
+   
+
     "pages/index/index",
+    "pages/tool/index",
     "pages/express/express",
+    
     "pages/city/city",
-    "pages/logs/logs"
+    "pages/anchor/anchor",
+    "pages/scroll/scroll",
+    "pages/leftdelete/leftdelete",
+    "pages/totop/totop",
+    "pages/fall-layout/index",
+    "pages/fall-layout1/index",
+    "pages/tabs/tabs"
     
   ],
   "window":{
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#01b2fe",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "天空之城",
-    "navigationBarTextStyle": "light"
+    "navigationBarTextStyle": "black"
   },
   "tabBar":{
-    "selectedColor":"#01b2fe",
+    "selectedColor":"#04998B",
     "color":"#333",
     "list":[
       {
         "pagePath":"pages/index/index",
-        "text":"天空之城",
-        "iconPath":"img/weather.png",
-        "selectedIconPath":"img/weather_active.png"
+        "text":"天气预报",
+        "iconPath":"img/icon14.png",
+        "selectedIconPath":"img/icon14_hover.png"
       },
       {
         "pagePath":"pages/express/express",
-        "text":"todo",
-        "iconPath": "img/todo.png",
-        "selectedIconPath": "img/todo_active.png"
+        "text":"记事本",
+        "iconPath": "img/icon33.png",
+        "selectedIconPath": "img/icon33_hover.png"
+      },
+      {
+        "pagePath": "pages/tool/index",
+        "text": "工具",
+        "iconPath": "img/icon34.png",
+        "selectedIconPath": "img/icon34_hover.png"
       }
     ]
   }

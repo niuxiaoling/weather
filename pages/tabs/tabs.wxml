@@ -1,0 +1,13 @@
+<!--pages/tabs/tabs.wxml-->
+<view class="contain">
+ <!-- 导航栏 -->
+ <scroll-view class="tab" scroll-x scroll-left="{{tabScroll}}" scroll-with-animation="true">
+    <block wx:for="{{menuList}}" wx:key="index">
+      <view class="tab-item {{currentTab == index ? 'active' : ''}}" data-current="{{index}}" bindtap='clickMenu'>{{item.name}}</view>
+    </block>
+ </scroll-view>
+ <!-- 页面 -->
+ <swiper class="content" style='height: {{height}}px' duration="1000" current="{{currentTab}}" bindchange="changeContent">
+ <swiper-item class="content-item" wx:for="{{menuList}}" wx:key="index">这里是{{item.name}}</swiper-item>
+ </swiper>
+</view>

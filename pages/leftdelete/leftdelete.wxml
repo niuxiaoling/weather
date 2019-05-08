@@ -1,0 +1,14 @@
+<!--pages/leftdelete/leftdelete.wxml-->
+<!-- 布局思路：
+    布局的时候采用分层思想，单独一行其实包含了两层 ，我们看到的第一层 和 删除按钮的那一层。将单独的一行设置相对定位
+    第一层通过绝地定位设置宽度100%；层级设置较高。
+    删除 按钮绝对定位固定宽度，定位到右侧。层级比第一层低就可以。
+    通过向左滑动让删除按钮 显示出来 -->
+<view class="item-box">
+    <view class="items">
+        <view wx:for="{{list}}" wx:key="{{index}}" class="item">
+            <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">{{item.txt}}</view>
+            <view data-index="{{index}}" bindtap= "delItem" class="inner del">删除</view>
+        </view>
+    </view>
+</view>

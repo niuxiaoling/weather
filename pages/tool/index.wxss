@@ -1,0 +1,21 @@
+/* pages/tool/index.wxss */
+.arrow-item{
+  position:relative;
+  height:90rpx;
+  line-height:90rpx;
+  padding:0 32rpx;
+
+}
+.arrow-item .arrow-title{
+  border-bottom:1rpx solid #e4e4e4;
+  font-size:30rpx;
+  color:#333;
+}
+.arrow-item image{
+  position:absolute;
+  right:32rpx;
+  top:34rpx;
+  width:12rpx;
+  height:22rpx;
+
+}

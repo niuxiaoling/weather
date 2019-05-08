@@ -1,13 +1,15 @@
 <view class='express-container'>
-     <view class='todo-header'>
+     <!-- <view class='todo-header'>
          todoList
-     </view> 
+     </view>  -->
      <view class="search-wrapper">
-      <image src='/img/search.png'></image>
-      <input placeholder='输入日程,按下回车即可添加新日程' confirm-type='search' maxlength='20' placeholder-class='placeClass' bindblur='comitTodo' value='{{searchText}}' ></input>
+      <view class='serach-flex'>
+        <image src='/img/icon-search.png'></image>
+      <input placeholder='输入日程,按下回车即可添加新日程' confirm-type='search'  placeholder-class='placeClass' bindblur='comitTodo' value='{{searchText}}' ></input>
+      </view>
+      
     </view>
      <view class=''>
-        <view class='rodo-list-title'>任务列表</view>
         <view class='tab-nav'>
            <view class='{{current==0?"on":""}}' data-current="0" bindtap='tab'>所有任务</view>
            <view class='{{current==1?"on":""}}' data-current="1" bindtap='tab'>进行中</view>
@@ -17,39 +19,46 @@
      <swiper class='tab-content' current="{{current}}" bindchange="eventchange">
         <!-- 全部数据 -->
         <swiper-item>
-          <view wx:if="{{items}}">
-             <view class='checkboxlist'>
+          <scroll-view wx:if="{{items}}" scroll-y class='tab-content'>
+             <view class='checkboxlist' >
                 <view class='checkbox-item'  wx:for="{{items}}" wx:key="{{index}}">
                     {{item.val}}
                 </view>
              </view>
-          </view>
+          </scroll-view>
         </swiper-item>
         <!-- 进行中的数据 -->
-        <swiper-item>
+        <swiper-item >
             <view class='desc'>选中后代表已完成,会进入到已完成页面</view>
-            <view class='checkboxlist'>
-              <view class='checkbox-item'  wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item" wx:if="{{item.checked == false }}" wx:for-index="index">
-                  <checkbox-group bindchange="checkchange" data-index="{{item.id}}">
-                  <label>
-                    <checkbox  value="{{item.id}}" checked="{{item.checked}}"/>{{item.val}}                                   </label>
-                  </checkbox-group>
-                  <view class='close'  data-close="{{index}}" bindtap='close'>×</view>
+            <scroll-view scroll-y class='tab-content'>
+              <view class='checkboxlist'>
+                <view class='checkbox-item'  wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item" wx:if="{{item.checked == false }}" wx:for-index="index">
+                    <checkbox-group bindchange="checkchange" data-index="{{item.id}}">
+                    <label>
+                      <checkbox  value="{{item.id}}" checked="{{item.checked}}"/>{{item.val}}                                   </label>
+                    </checkbox-group>
+                    <view class='close'  data-close="{{index}}" bindtap='close'>×</view>
+                </view>
               </view>
-            </view>
+            </scroll-view>
         </swiper-item>
         <!-- 已完成的数据 -->
         <swiper-item>
             <view class='desc'>取消选中后代表未完成，会进入到进行中页面</view>
-            <view class='checkboxlist'>
-               <view class='checkbox-item checkboxover'  wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item" wx:if="{{item.checked == true }}" wx:for-index="index">
-                  <checkbox-group bindchange="checkchange" data-index="{{item.id}}">
-                    <label>
-                      <checkbox  value="{{item.id}}" checked="{{item.checked}}"/>{{item.val}}                                   </label>
-                  </checkbox-group>
-                   <view class='close'  data-close="{{index}}" bindtap='close'>×</view>
+            <scroll-view scroll-y class='tab-content'>
+              <view class='checkboxlist'>
+                <view class='checkbox-item checkboxover checkbox-item1'  wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item" wx:if="{{item.checked == true }}" wx:for-index="index">
+                    <checkbox-group bindchange="checkchange" data-index="{{item.id}}">
+                      <label>
+                        <checkbox  value="{{item.id}}" checked="{{item.checked}}"/>{{item.val}}                                   </label>
+                    </checkbox-group>
+                    <view class='close'  data-close="{{index}}" bindtap='close'>×</view>
+                </view>
+            
+            
+            
               </view>
-          </view>
+            </scroll-view>
         </swiper-item>
      </swiper>
 </view>
